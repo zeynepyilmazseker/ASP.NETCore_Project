@@ -43,6 +43,4 @@ Once the project is running, you can access the application through your local b
 
 Feel free to fork this repository and submit pull requests. Contributions are welcome!
 
-## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

@@ -1,0 +1,41 @@
+﻿@using EntityLayer.Concrete
+@model List<WriterMessage>
+@{
+    ViewData["Title"] = "SenderMessageList";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Admin-Yazar Giden Kutusu</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Alıcı</th>
+                            <th>Konu</th>
+                            <th>Tarih</th>
+                            <th>DETAYLAR</th>
+                            <th>Sil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.MessageID</td>
+                                <td>@item.ReceiverName</td>
+                                <td>@item.Subject</td>
+                                <td>@(((DateTime)item.Date).ToString("dd-MM-yyyy"))</td>
+                                <td><a href="/AdminMessage/AdminSenderMessageDetails/@item.MessageID" class="btn btn-primary btn-sm">Mesajı Gör</a></td>
+                                <td><a href="/AdminMessage/AdminSenderMessageDelete/@item.MessageID" class="btn btn-danger btn-sm">Mesajı Gör</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@using EntityLayer.Concrete
+@model List<SocialMedia>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Deneyimler</h4>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>İsim</th>
+                            <th>URL</th>
+                            <th>İkon</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.SocialMediaID</td>
+                                <td>@item.Name</td>
+                                <td>@item.Url</td>
+                                <td><i class="@item.Icon"></i></td>
+                                <td><a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaID" class="btn btn-danger btn-sm">Sil</a></td>
+                                <td><a href="/SocialMedia/UpdateSocialMedia/@item.SocialMediaID" class="btn btn-warning btn-sm">Güncelle</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<a href="/SocialMedia/AddSocialMedia" class="btn btn-info">Yeni Sosyal Medya Bilgisi Ekle</a>
+

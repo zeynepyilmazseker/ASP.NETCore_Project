@@ -1,0 +1,20 @@
+﻿@model EntityLayer.Concrete.Message
+@{
+    ViewData["Title"] = "ContactDetails";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Mesaj Detay Sayfası</h4>
+            <form class="form-group">
+                @Html.HiddenFor(x => x.MessageID, new { @disabled = "disabled", @class = "form-control" })
+                @Html.Label("Mesaj:")
+                @Html.TextAreaFor(x => x.Content, 10, 3, new { @class = "form-control", @readonly = "readonly" })
+            </form>
+        </div>
+    </div>
+</div>
